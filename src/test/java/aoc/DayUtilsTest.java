@@ -1,3 +1,5 @@
+package aoc;
+
 import aoc.DayUtils;
 import org.junit.Test;
 
