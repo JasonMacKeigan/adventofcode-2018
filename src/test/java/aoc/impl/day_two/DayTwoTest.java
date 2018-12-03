@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class DayTwoTest implements DayTest {
 
+    @Override
+    public Day day() {
+        return new DayTwo();
+    }
+
     @Test
     @Override
     public void assertPartOne() {
