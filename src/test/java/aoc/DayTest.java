@@ -10,7 +10,7 @@ import org.junit.Test;
 public interface DayTest<D extends Day> {
 
     D day();
-    
+
     void assertPartOne();
 
     void assertPartTwo();
@@ -18,4 +18,9 @@ public interface DayTest<D extends Day> {
     void outputPartOne();
 
     void outputPartTwo();
+
+    default void print() {
+        System.out.println(String.format("first answer=%s", day().firstAnswer()));
+        System.out.println(String.format("second answer=%s", day().secondAnswer()));
+    }
 }

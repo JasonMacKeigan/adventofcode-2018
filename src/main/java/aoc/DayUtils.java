@@ -16,8 +16,13 @@ public final class DayUtils {
     }
 
     public static List<String> findInput(int day) {
+        return findInput(String.format("day_%s.txt", day));
+    }
+
+    public static List<String> findInput(String path) {
         try {
-            return Files.readAllLines(Paths.get(DayUtils.class.getProtectionDomain().getClassLoader().getResource(String.format("day_%s.txt", day)).toURI()));
+            return Files.readAllLines(Paths.get(DayUtils.class.getProtectionDomain().getClassLoader()
+                    .getResource(path).toURI()));
         } catch (IOException | URISyntaxException e) {
             throw new IllegalStateException("Unable to read all lines.", e);
         }
